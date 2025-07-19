@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Polaris - AI-Powered Accessibility Auditor</title>
+    <!-- Add axe-core for accessibility scanning -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axe-core/4.7.2/axe.min.js" crossorigin="anonymous"></script>
+    <!-- Add color library for contrast analysis -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/color/4.2.3/color.min.js" crossorigin="anonymous"></script>
+    <script type="module" crossorigin src="/assets/index-B1NgLnmr.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BBA3tJtZ.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // Initialize accessibility testing when page loads
+      window.addEventListener('load', function() {
+        // Test axe-core availability
+        if (typeof axe !== 'undefined') {
+          console.log('✅ axe-core loaded successfully');
+        } else {
+          console.warn('⚠️ axe-core not loaded');
+        }
+        
+        // Test Color library availability
+        if (typeof Color !== 'undefined') {
+          console.log('✅ Color library loaded successfully');
+        } else {
+          console.warn('⚠️ Color library not loaded');
+        }
+        
+        // Test Web Speech API availability
+        if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+          console.log('✅ Speech Recognition API available');
+        } else {
+          console.warn('⚠️ Speech Recognition API not available');
+        }
+        
+        if ('speechSynthesis' in window) {
+          console.log('✅ Speech Synthesis API available');
+        } else {
+          console.warn('⚠️ Speech Synthesis API not available');
+        }
+      });
+    </script>
+  </body>
+</html>
